@@ -1,6 +1,6 @@
 import os
 import torch
-from torch.utils import cpp_extension
+from torch.utils.cpp_extension import BuildExtension, CUDAExtension
 
 
 sources = ['src/reorg_cpu.c']
@@ -20,7 +20,7 @@ this_file = os.path.dirname(os.path.realpath(__file__))
 extra_objects = ['src/reorg_cuda_kernel.cu.o']
 extra_objects = [os.path.join(this_file, fname) for fname in extra_objects]
 
-ffi = cpp_extension(
+ffi = CUDAExtension(
     '_ext.reorg_layer',
     headers=headers,
     sources=sources,
