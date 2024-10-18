@@ -20,7 +20,7 @@ print(this_file)
 extra_objects = ['src/cuda/roi_pooling_kernel.cu.o']
 extra_objects = [os.path.join(this_file, fname) for fname in extra_objects]
 
-ffi = create_extension(
+ffi = cpp_extension(
     '_ext.roi_pooling',
     headers=headers,
     sources=sources,
