@@ -1,6 +1,6 @@
 import os
 import torch
-from torch.utils.ffi import create_extension
+from torch.utils import create_extension
 
 
 sources = ['src/reorg_cpu.c']
