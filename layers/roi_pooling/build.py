@@ -1,6 +1,6 @@
 import os
 import torch
-from torch.utils import create_extension
+from torch.utils import cpp_extension
 
 
 sources = ['src/roi_pooling.c']
