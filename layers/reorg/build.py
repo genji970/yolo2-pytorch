@@ -20,7 +20,7 @@ this_file = os.path.dirname(os.path.realpath(__file__))
 extra_objects = ['src/reorg_cuda_kernel.cu.o']
 extra_objects = [os.path.join(this_file, fname) for fname in extra_objects]
 
-ffi = create_extension(
+ffi = cpp_extension(
     '_ext.reorg_layer',
     headers=headers,
     sources=sources,
